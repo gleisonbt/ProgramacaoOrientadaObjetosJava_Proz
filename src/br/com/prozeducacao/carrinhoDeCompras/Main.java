@@ -47,7 +47,7 @@ public class Main {
 		p.setPreco(40);
 		System.out.println(p.exibir());
 		*/
-		CarrinhoDeCompras cp = new CarrinhoDeComprasArray();
+		CarrinhoDeCompras cp = new CarrinhoDeComprasLista();
 		int opcao;
 		do {
 			opcao = Integer.parseInt(JOptionPane.showInputDialog(""
@@ -76,7 +76,30 @@ public class Main {
 				break;
 				
 			case 3:
-				
+				String nomeProduto = JOptionPane.
+				showInputDialog("Informe o nome do produto: ");
+				Produto p = cp.buscarProdutoPOrNome(nomeProduto);
+				if (p == null) {
+					JOptionPane.showMessageDialog(null, 
+							"Produto não cadastrado!");
+				} else {
+					int op = Integer.parseInt(
+							JOptionPane.showInputDialog(
+									"1 - nome\n"
+									+ "2 - preco"));
+					switch (op) {
+					case 1:
+						p.setNome(JOptionPane.
+								showInputDialog("Novo nome: "));
+						break;
+					case 2:
+						p.setPreco(Float.parseFloat(JOptionPane.
+								showInputDialog("Novo preco: ")));
+						break;
+					default:
+						break;
+					}
+				}
 				break;
 			
 			case 4:

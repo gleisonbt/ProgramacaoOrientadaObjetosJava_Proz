@@ -6,4 +6,5 @@ public interface CarrinhoDeCompras {
 	Produto[] getProdutos();
 	String listarProdutos();
 	boolean estaCheio();
+	Produto buscarProdutoPOrNome(String nome);
 }

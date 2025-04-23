@@ -29,4 +29,14 @@ public class CarrinhoDeComprasLista implements CarrinhoDeCompras {
 	public boolean estaCheio() {
 		return false;
 	}
+
+	
+	public Produto buscarProdutoPOrNome(String nome) {
+		for (Produto produto : produtos) {
+			if (produto.getNome().equals(nome)) {
+				return produto;
+			}
+		}
+		return null;
+	}
 }

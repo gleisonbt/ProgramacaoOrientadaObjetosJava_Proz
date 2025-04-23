@@ -40,4 +40,14 @@ public class CarrinhoDeComprasArray implements CarrinhoDeCompras {
 	public boolean estaCheio() {
 		return qtdeProdutos == produtos.length;
 	}
+
+
+	public Produto buscarProdutoPOrNome(String nome) {
+		for (int i = 0; i < qtdeProdutos; i++) {
+			if (produtos[i].getNome().equals(nome)) {
+				return produtos[i];
+			}
+		}
+		return null;
+	}
 }
